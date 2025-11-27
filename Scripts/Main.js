@@ -65,11 +65,16 @@ function SelectionChanged() {
     {
         CurrentFunction = "NoFunction";
     }
+
+    
+    localStorage.setItem("year", year)
+    localStorage.setItem("day", day)
+    localStorage.setItem("part", part)
 }
 
 window.onload = function() {
     YearSelectionChanged();
-    
+
     let input = document.getElementById("input");
     input.value = localStorage.getItem("input");
 }
