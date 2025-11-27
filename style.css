@@ -1,0 +1,33 @@
+body {
+    background-color: #0f0f23;
+    color: #cccccc;
+    font-family: "Source Code Pro", monospace;
+}
+
+#input {
+    background-color: #0f0f23;
+    color: #cccccc;
+    font-family: "Source Code Pro", monospace;
+    font-size: 20;
+    resize: none;
+}
+
+#solver {
+    text-align: center;
+    display: block;
+}
+
+#output {
+    margin-top: 10px;
+}
+
+.output_box {
+    display: inline-block;
+    border: #888 solid 2px;
+    padding: 2px;
+    background-color: #050510;
+    min-width: 100px;
+    min-height: 20px;
+    text-align: left;
+    vertical-align: middle;
+}
