@@ -4,6 +4,27 @@ body {
     font-family: "Source Code Pro", monospace;
 }
 
+h1 {
+    color: #03bf0a;
+    font-weight: 400;
+    text-shadow: 0 0 5px rgb(42, 216, 48);
+}
+
+label {
+    color: #009900;
+}
+
+select {
+    background-color: #0f0f23;
+    color: #cccccc;
+    font-family: "Source Code Pro", monospace;
+}
+
+input[type='radio'] {
+    accent-color:  #03ff0a;
+    filter: brightness(0.5);
+}
+
 #main {
     text-align: center;
     vertical-align: top;
@@ -46,4 +67,9 @@ body {
     border: #888 solid 2px;
     min-width: 200;
     padding: 10px;
+}
+
+.glowOnHover:hover {
+    color: #99ff99;
+    text-shadow: 0 0 5px rgb(42, 216, 48);
 }
