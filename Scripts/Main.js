@@ -18,12 +18,20 @@ function Run() {
 }
 
 function YearSelectionChanged() {
+    SetDaysForYear(document.getElementById("day_selection").value);
+    SelectionChanged();
+}
+
+function SetDaysForYear(selection = 1) {
     let yearSelection = document.getElementById("year_selection");
     year = yearSelection.value;
     let numDays = 25;
     if (year >= 2025)
     {
         numDays = 12;
+        if (selection >= numDays) {
+            selection = numDays;
+        }
     }
 
     let daySelection = document.getElementById("day_selection");
@@ -35,8 +43,8 @@ function YearSelectionChanged() {
         newOption.innerText = i;
         daySelection.appendChild(newOption);
     }
-
-    SelectionChanged()
+    
+    daySelection.value = selection;
 }
 
 function DaySelectionChanged() {
@@ -67,12 +75,30 @@ function SelectionChanged() {
     }
 
     
-    localStorage.setItem("year", year)
-    localStorage.setItem("day", day)
-    localStorage.setItem("part", part)
+    localStorage.setItem("year", year);
+    localStorage.setItem("day", day);
+    localStorage.setItem("part", part);
 }
 
 window.onload = function() {
+    if (localStorage.getItem("year") !== null) {
+        document.getElementById("year_selection").value = localStorage.getItem("year");
+    }
+
+    if (localStorage.getItem("day") !== null) {
+        SetDaysForYear(localStorage.getItem("day"));
+    }
+
+    if (localStorage.getItem("part") !== null) {
+        part = localStorage.getItem("part");
+        if (part == "One") {
+            document.getElementById("part_selection_one").checked = "checked";
+        }
+        else {
+                document.getElementById("part_selection_two").checked = "checked";
+        }
+    }
+
     YearSelectionChanged();
 
     let input = document.getElementById("input");
