@@ -2,16 +2,39 @@
 <head>
     <title>Advent of Phil</title>
     <link rel="stylesheet" href="style.css">
+
+    <!--Scripts-->
+    <script type="text/javascript" src="Scripts/Main.js"></script>
+
+    <script type="text/javascript" src="Scripts/2015/Day1.js"></script>
 </head>
 <body>
     <h1>Advent of Code</h1>
-    <div id="solver">
-        <textarea id="input" name="input" rows="20" cols="60"></textarea>
-        <br>
-        <div id="output">
-            <button id="run_button">Run</button>
-            Output: <span class="output_box"></span>
+    <div id="main">
+        <div id="solver">
+            <textarea id="input" name="input" rows="20" cols="60" onchange="InputChanged()"></textarea>
+            <br>
+            <div id="output">
+                <button id="run_button" onclick="Run()">Run</button>
+                Output: <span id="answer_output_box" class="output_box"></span>
+            </div>
         </div>
+    </div>
+    <div id="problem_selector">
+        <label>Year: </label>
+        <select name="year" id="year_selection" onchange="YearSelectionChanged()">
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+        </select>
+        <br>
+        <label>Day: </label>
+        <select name="day" id="day_selection" onchange="DaySelectionChanged()">
+        </select>
+        <br>
+        <input type="radio" name="part" value="One" checked="checked" onclick="PartSelectionChanged()">
+        <label>Part 1</label><br>
+        <input type="radio" name="part" value="Two" onclick="PartSelectionChanged()">
+        <label>Part 2</label><br>
     </div>
 </body>
 </html>
