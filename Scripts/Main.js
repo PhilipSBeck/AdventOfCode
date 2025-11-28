@@ -37,11 +37,17 @@ function SetDaysForYear(selection = 1) {
     let daySelection = document.getElementById("day_selection");
     daySelection.innerHTML = "";
 
+    //TODO check if the option actually has a function
     for (i = 1; i <= numDays; i++) {
         let newOption = document.createElement("option");
         newOption.value = i;
         newOption.innerText = i;
-        daySelection.appendChild(newOption);
+        
+        CurrentFunction = "Year" + year + "Day" + i;
+        if (typeof window[CurrentFunction + "PartOne"] === "function" || typeof window[CurrentFunction + "PartTne"] === "function")
+        {
+            daySelection.appendChild(newOption);
+        }
     }
     
     daySelection.value = selection;
