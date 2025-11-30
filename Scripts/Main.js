@@ -110,3 +110,8 @@ window.onload = function() {
     let input = document.getElementById("input");
     input.value = localStorage.getItem("input");
 }
+
+function OutputClicked() {
+    let text = document.getElementById("answer_output_box").innerText;
+    navigator.clipboard.writeText(text);
+}

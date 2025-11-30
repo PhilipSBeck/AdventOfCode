@@ -31,11 +31,11 @@
     <h1>Advent of Phil</h1>
     <div id="main">
         <div id="solver">
-            <textarea id="input" name="input" rows="20" cols="60" onchange="InputChanged()"></textarea>
+            <textarea id="input" placeholder="Copy input in here!" name="input" rows="20" cols="60" onchange="InputChanged()"></textarea>
             <br>
             <div id="output">
                 <button id="run_button" onclick="Run()">Run</button>
-                Output: <span id="answer_output_box" class="output_box"></span>
+                Output: <span id="answer_output_box" class="output_box" onclick="OutputClicked()"></span>
             </div>
         </div>
     </div>

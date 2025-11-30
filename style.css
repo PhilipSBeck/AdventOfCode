@@ -37,6 +37,9 @@ input[type='radio'] {
     font-size: 20;
     resize: none;
 }
+#input::placeholder {
+    color: rgb(70, 114, 70);
+}
 
 #solver {
     text-align: center;
@@ -57,6 +60,7 @@ input[type='radio'] {
     text-align: left;
     vertical-align: middle;
     color: #0C0;
+    cursor: pointer;
 }
 
 #problem_selector {
