@@ -23,6 +23,8 @@ function Year2025Day1PartOne(value) {
     return numZeros;
 }
 
+// This is really inefficient but I had somewhere to be.
+// Might go back and optimise it. Probably won't.
 function Year2025Day1PartTwo(value) {
     let lines = value.split("\n");
     let pos = 50;
