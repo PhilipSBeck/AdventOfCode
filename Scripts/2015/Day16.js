@@ -36,7 +36,7 @@ function Year2015Day16PartOne(value) {
 }
 
 function Year2015Day16PartTwo(value) {
-        let lines = value.split("\n");
+    let lines = value.split("\n");
     let sues = [];
     for (let i = 0; i < lines.length; i++) {
         let words = lines[i].split(" ");
