@@ -1,7 +1,38 @@
 function Year2015Day19PartOne(value) {
-    return "Unimplemented";
+    let lines = value.split("\n");
+    let startingFormula = "";
+    let replacements = [];
+    for (let i = 0; i < lines.length; i++) {
+        if (lines[i] == "") {
+            startingFormula = lines[i + 1];
+            break;
+        }
+        let replacement = lines[i].split(" => ");
+        replacements.push([replacement[0], replacement[1]]);
+    }
+
+    let newFormulas = new Map();
+    for (let i = 0; i < replacements.length; i++) {
+        let pos = 0;
+        while (pos >= 0)
+        {
+            const regex = new RegExp(replacements[i][0], "g");
+            let newPos = startingFormula.substring(pos).search(regex);
+            if (newPos > -1){
+                pos += newPos;
+                let newFormula = startingFormula.substring(0, pos) + replacements[i][1] + startingFormula.substring(pos + replacements[i][0].length);
+                newFormulas.set(newFormula, true);
+                pos += replacements[i][0].length;
+            }
+            else {
+                pos = -1;
+            }
+        }
+    }
+
+    return newFormulas.size;
 }
 
 function Year2015Day19PartTwo(value) {
-    return "Unimplemented";
+    return "undefined";
 }
