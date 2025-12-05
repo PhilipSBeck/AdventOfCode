@@ -33,6 +33,26 @@ function Year2015Day19PartOne(value) {
     return newFormulas.size;
 }
 
+class molecule {
+    constructor(molecule) {
+        this.molecule = molecule;
+    }
+}
+
 function Year2015Day19PartTwo(value) {
+    let lines = value.split("\n");
+    let finalFormula = "";
+    let replacements = [];
+    for (let i = 0; i < lines.length; i++) {
+        if (lines[i] == "") {
+            finalFormula = lines[i + 1];
+            break;
+        }
+        let replacement = lines[i].split(" => ");
+        replacements.push([replacement[0], replacement[1]]);
+    }
+
+
+
     return "undefined";
 }
