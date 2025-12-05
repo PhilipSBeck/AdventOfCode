@@ -122,7 +122,6 @@ function Year2025Day5PartTwo(value) {
     // count range
     let numValid = 0;
     for (let j = 0; j < ranges.length; j++) {
-        console.log(ranges[j][1] - ranges[j][0] + 1);
         let validValues = ranges[j][1] - ranges[j][0] + 1;
         numValid += validValues;
     }
