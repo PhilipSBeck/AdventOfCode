@@ -22,3 +22,7 @@ function permute(permutation) {
   }
   return result;
 }
+
+function square(num){
+  return num * num;
+}
