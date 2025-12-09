@@ -41,18 +41,36 @@ class molecule {
 
 function Year2015Day19PartTwo(value) {
     let lines = value.split("\n");
-    let finalFormula = "";
+    let formula = "";
     let replacements = [];
     for (let i = 0; i < lines.length; i++) {
         if (lines[i] == "") {
-            finalFormula = lines[i + 1];
+            formula = lines[i + 1];
             break;
         }
         let replacement = lines[i].split(" => ");
         replacements.push([replacement[0], replacement[1]]);
     }
 
+    replacements.sort((a,b) => b[1].length - a[1].length);
+    
+    let failed = false;
+    let swaps = 0;
+    while(formula != "e" && !failed){
+        failed = true;
+        for(let i = 0; i < replacements.length; i++){
+            let regex = new RegExp(replacements[i][1], "g");
+            if (formula.search(regex) !== -1){
+                formula = formula.replace(regex, replacements[i][0]);
+                swaps++;
+                failed = false;
+                break;
+            }
+        }
+    }
+    if(failed || formula != "e"){
+        return formula;
+    }
 
-
-    return "undefined";
+    return swaps;
 }
