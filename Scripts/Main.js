@@ -13,8 +13,10 @@ function InputChanged() {
 function Run() {
     let input = document.getElementById("input");
     let value = input.value;
+    let startTime = new Date();
     let answer = window[CurrentFunction](value);
     document.getElementById("answer_output_box").innerText = answer;
+    document.getElementById("time_output_box").innerText = (((new Date()).getTime() - startTime.getTime())/1000.0) + " Seconds";
 }
 
 function YearSelectionChanged() {
